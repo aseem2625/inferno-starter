@@ -1,19 +1,29 @@
 import Inferno from 'inferno'
 import { Route, IndexRoute } from 'inferno-router'
 
-import Home from './containers/Home';
 import AppContainer from './containers/AppContainer';
-import Article from './containers/Article';
-import Error404 from './containers/errors/404';
-import Credit from './containers/Credit';
-import Blog from './containers/Blog';
+import Home from './containers/Home';
+
 
 export default (
 	<Route component={ AppContainer }>
 		<IndexRoute path="/" component={ Home } />
-		<Route path="/credit" component={ Credit } />
-		<Route path="/blog" component={ Blog } />
-		<Route path="/blog/:title" component={ Article } />
-		<Route path="*" component={ Error404 } />
+
+
+		<Route path="/credit" getComponent={(props, cb) => {
+			require.ensure([], require => cb(null, require('./containers/Credit').default));
+		}}/>
+
+		<Route path="/blog" getComponent={(props, cb) => {
+			require.ensure([], require => cb(null, require('./containers/Blog').default));
+		}}/>
+		<Route path="/blog/:title" getComponent={(props, cb) => {
+			require.ensure([], require => cb(null, require('./containers/Article').default), 'article');
+		}}/>
+
+		<Route path="*" getComponent={(props, cb) => {
+			require.ensure([], require => cb(null, require('./containers/errors/404').default), '404');
+		}}/>
+
 	</Route>
 );
