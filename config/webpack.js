@@ -11,7 +11,7 @@ module.exports = env => {
 	return {
 		entry: {
 			app: './src/index.js',
-			vendor: ['inferno']
+	vendor: ['inferno', 'inferno-router', 'history']
 		},
 		output: {
 			path: dist,
