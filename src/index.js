@@ -1,13 +1,13 @@
 import Inferno from 'inferno';
 import { Router } from 'inferno-router';
 import { createBrowserHistory } from 'history';
-import views from './views';
+import viewRoutes from './views';
 import './index.sass';
 
 const history = createBrowserHistory();
 
 Inferno.render((
-	<Router history={ history }>{ views }</Router>
+	<Router history={ history }>{ viewRoutes }</Router>
 ), document.getElementById('root'));
 
 if (process.env.NODE_ENV === 'production') {
