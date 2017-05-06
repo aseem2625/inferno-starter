@@ -1,5 +1,5 @@
 import Inferno from 'inferno';
-import Card from '../tags/card';
+import Card from '../components/Card';
 
 const links = [{
 	name: 'lukeed/inferno-starter',

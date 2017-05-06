@@ -1,6 +1,6 @@
 import Inferno from 'inferno';
 import { Link } from 'inferno-router';
-import Card from '../tags/card';
+import Card from '../components/Card';
 
 export default function (props) {
 	return (

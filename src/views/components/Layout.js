@@ -1,5 +1,5 @@
 import Inferno from 'inferno';
-import Header from './header';
+import Header from './Header';
 
 export default function (props) {
 	return (

@@ -1,12 +1,12 @@
 import Inferno from 'inferno'
 import { Route } from 'inferno-router'
 
-import Home from './pages/home';
-import Layout from './tags/layout';
-import Article from './pages/article';
-import Error404 from './pages/errors/404';
-import Credit from './pages/credit';
-import Blog from './pages/blog';
+import Home from './containers/Home';
+import Layout from './components/Layout';
+import Article from './containers/Article';
+import Error404 from './containers/errors/404';
+import Credit from './containers/Credit';
+import Blog from './containers/Blog';
 
 export default (
 	<Route component={ Layout }>
