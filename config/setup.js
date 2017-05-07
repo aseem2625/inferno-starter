@@ -1,5 +1,6 @@
 const { join } = require('path');
 const webpack = require('webpack');
+const BabiliPlugin = require("babili-webpack-plugin");
 const ExtractText = require('extract-text-webpack-plugin');
 const SWPrecache = require('sw-precache-webpack-plugin');
 const Dashboard = require('webpack-dashboard/plugin');
@@ -9,11 +10,11 @@ const HTML = require('html-webpack-plugin');
 
 const uglify = require('./uglify');
 const babel = require('./babel');
+const babili = require('./babili');
 
 const root = join(__dirname, '..');
 
 module.exports = isProd => {
-	isProd && babel.presets.push('babili');
 
 	// base plugins array
 	const plugins = [
@@ -37,6 +38,7 @@ module.exports = isProd => {
 	if (isProd) {
 		plugins.push(
 			new webpack.LoaderOptionsPlugin({ minimize:true, debug:false }),
+			new BabiliPlugin({babili}),
 			new webpack.optimize.UglifyJsPlugin(uglify),
 			new ExtractText('styles.[hash].css'),
 			new SWPrecache({

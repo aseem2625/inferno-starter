@@ -20,7 +20,7 @@ module.exports = env => {
 		},
 		module: {
 			rules: [{
-				test: /\.jsx?$/,
+				test: /\.js?$/,
 				exclude: exclude,
 				loader: 'babel-loader'
 			}, {
