@@ -6,6 +6,10 @@ import './index.sass';
 
 const history = createBrowserHistory();
 
+if (module.hot) {
+	require('inferno-devtools');
+}
+
 Inferno.render((
 	<Router history={ history }>{ viewRoutes }</Router>
 ), document.getElementById('root'));

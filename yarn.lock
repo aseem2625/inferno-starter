@@ -1221,7 +1221,7 @@ camelcase-keys@^2.0.0:
     camelcase "^2.0.0"
     map-obj "^1.0.0"
 
-camelcase@4.1.0:
+camelcase@4.1.0, camelcase@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
@@ -1236,10 +1236,6 @@ camelcase@^2.0.0, camelcase@^2.1.0:
 camelcase@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
-
-camelcase@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.0.0.tgz#8b0f90d44be5e281b903b9887349b92595ef07f2"
 
 caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
   version "1.0.30000649"
@@ -2733,48 +2729,58 @@ indexof@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/indexof/-/indexof-0.0.1.tgz#82dc336d232b9062179d05ab3293a66059fd435d"
 
-inferno-component@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/inferno-component/-/inferno-component-3.1.0.tgz#21e41ac4764ecd734eee3d045742e624c78c823c"
+inferno-component@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/inferno-component/-/inferno-component-3.1.1.tgz#99832b73b2f96b129d6d302e474272964408305c"
   dependencies:
-    inferno "3.1.0"
-    inferno-shared "^3.0.0"
+    inferno "3.1.1"
+    inferno-shared "3.1.1"
     inferno-vnode-flags "^3.0.0"
 
-inferno-create-element@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/inferno-create-element/-/inferno-create-element-3.1.0.tgz#0d4b134e821e08e4c55256ff99aab958060890e1"
+inferno-create-element@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/inferno-create-element/-/inferno-create-element-3.1.1.tgz#b53bc5cca7004511426213ab8cfa9210ab05956a"
   dependencies:
-    inferno "3.1.0"
-    inferno-component "3.1.0"
-    inferno-shared "^3.0.0"
+    inferno "3.1.1"
+    inferno-component "3.1.1"
+    inferno-shared "3.1.1"
     inferno-vnode-flags "^3.0.0"
 
-inferno-router@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/inferno-router/-/inferno-router-3.1.0.tgz#5a60eb9e9f3bca6a8cb54145eaa52ba27cbeaff3"
+inferno-devtools@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/inferno-devtools/-/inferno-devtools-3.1.1.tgz#8a245d134f057b37b393692dc3758d236171e69f"
+  dependencies:
+    inferno "3.1.1"
+    inferno-component "3.1.1"
+    inferno-shared "3.1.1"
+    inferno-vnode-flags "^3.0.0"
+
+inferno-router@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/inferno-router/-/inferno-router-3.1.1.tgz#b80c1b0c77f445174e36131e6049cc54d87e17c2"
   dependencies:
     history "^4.6.1"
-    inferno "3.1.0"
-    inferno-component "3.1.0"
-    inferno-create-element "3.1.0"
-    inferno-shared "^3.0.0"
+    inferno "3.1.1"
+    inferno-component "3.1.1"
+    inferno-create-element "3.1.1"
+    inferno-shared "3.1.1"
     inferno-vnode-flags "^3.0.0"
+    path-to-regexp "^1.7.0"
     path-to-regexp-es6 "0.0.2"
 
-inferno-shared@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/inferno-shared/-/inferno-shared-3.0.0.tgz#daaeaf1b52803ab0572c7765ccfcfb925cfe8272"
+inferno-shared@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/inferno-shared/-/inferno-shared-3.1.1.tgz#70376e29a56c53f6ba1e942191fe5cb710654f73"
 
 inferno-vnode-flags@3.0.0, inferno-vnode-flags@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/inferno-vnode-flags/-/inferno-vnode-flags-3.0.0.tgz#f396390f3dafae3b76eea04d04eed6cf2004473b"
 
-inferno@3.1.0, inferno@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/inferno/-/inferno-3.1.0.tgz#4a7f5a9ba756e8b9374b8a47961ca487a4411b71"
+inferno@3.1.1, inferno@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/inferno/-/inferno-3.1.1.tgz#878a7fa9a10e9b373fb95ff9da2f61e664f426f1"
   dependencies:
-    inferno-shared "^3.0.0"
+    inferno-shared "3.1.1"
     inferno-vnode-flags "^3.0.0"
 
 inflight@^1.0.4:
@@ -3852,15 +3858,15 @@ path-to-regexp-es6@0.0.2:
   dependencies:
     path-to-regexp "*"
 
-path-to-regexp@*, path-to-regexp@0.1.7:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
-
-path-to-regexp@^1.0.1:
+path-to-regexp@*, path-to-regexp@^1.0.1, path-to-regexp@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-1.7.0.tgz#59fde0f435badacba103a84e9d3bc64e96b9937d"
   dependencies:
     isarray "0.0.1"
+
+path-to-regexp@0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
 
 path-type@2.0.0:
   version "2.0.0"
