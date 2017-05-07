@@ -37,7 +37,7 @@ module.exports = isProd => {
 		plugins.push(
 			new webpack.LoaderOptionsPlugin({ minimize:true, debug:false }),
 			new webpack.optimize.UglifyJsPlugin(uglify),
-			new ExtractText('styles.[hash].css'),
+			new ExtractText('styles.[chunkhash].css'),
 			new SWPrecache({
 				filename: 'service-worker.js',
 				dontCacheBustUrlsMatching: /./,
