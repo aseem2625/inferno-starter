@@ -11,11 +11,11 @@ export default (
 
 
 		<Route path="/credit" getComponent={(props, cb) => {
-			require.ensure([], require => cb(null, require('./containers/Credit').default));
+			require.ensure([], require => cb(null, require('./containers/Credit').default), 'credit');
 		}}/>
 
 		<Route path="/blog" getComponent={(props, cb) => {
-			require.ensure([], require => cb(null, require('./containers/Blog').default));
+			require.ensure([], require => cb(null, require('./containers/Blog').default), 'blog');
 		}}/>
 		<Route path="/blog/:title" getComponent={(props, cb) => {
 			require.ensure([], require => cb(null, require('./containers/Article').default), 'article');
