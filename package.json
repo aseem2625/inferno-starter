@@ -17,6 +17,7 @@
   "dependencies": {
     "history": "^4.6.1",
     "inferno": "^3.1.1",
+    "inferno-component": "^3.1.1",
     "inferno-redux": "^3.1.1",
     "inferno-router": "^3.1.1",
     "md-colors": "^1.0.0",
