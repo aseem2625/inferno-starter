@@ -1,10 +1,17 @@
 import Inferno from 'inferno';
+
+import { connect } from 'inferno-redux'
+import { bindActionCreators } from 'redux';
+import * as actions from '../../reducers/modules/counter';
+
 import { Link } from 'inferno-router';
 import Card from '../components/Card';
 
-export default function (props) {
+const Home = function (props) {
 	return (
 		<div className="page page__home">
+			<button className="temp-btn" onClick={props.increment}>REDUX COUNTER BUTTON</button>
+			<span>Counter: {props.counter}</span>
 			<Card>
 				<h1>Home</h1>
 				<p>This is the home page.</p>
@@ -45,3 +52,13 @@ export default function (props) {
 		</div>
 	);
 }
+
+const mapStateToProps = (state) => ({
+	counter: state.counter.counter
+});
+
+const mapDispatchToProps = (dispatch) => {
+	return bindActionCreators({ ...actions }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
