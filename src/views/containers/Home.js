@@ -3,12 +3,20 @@ import Component from 'inferno-component';
 
 import { connect } from 'inferno-redux'
 import { bindActionCreators } from 'redux';
-import * as actions from '../../reducers/modules/counter';
+import * as CounterActions from '../../reducers/modules/counter';
 
 import { Link } from 'inferno-router';
 import Card from '../components/Card';
 
-class Home extends Component {
+@connect(
+	state => {
+		return {
+			count: state.counter.counter
+		};
+	},
+	{ ...CounterActions }
+)
+export default class Home extends Component {
 	componentWillMount() {
 		this.props.increment(); // incrementing a count
 	}
@@ -20,8 +28,11 @@ class Home extends Component {
 	render() {
 		return (
 			<div className="page page__home">
+				<div className="temp-note">
+					<b>Note:</b> If you increment the Counter to, suppose, 6 and you move to /blog and come back then count will be 8 because this component will mount again
+				</div>
 				<button className="temp-btn" onClick={this.props.increment}>REDUX COUNTER BUTTON</button>
-				<span>Counter: {this.props.counter}</span>
+				<span>Counter: {this.props.count}</span>
 				<Card>
 					<h1>Home</h1>
 					<p>This is the home page.</p>
@@ -63,13 +74,3 @@ class Home extends Component {
 		);
 	}
 }
-
-const mapStateToProps = (state) => ({
-	counter: state.counter.counter
-});
-
-const mapDispatchToProps = (dispatch) => {
-	return bindActionCreators({ ...actions }, dispatch);
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
