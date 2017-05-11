@@ -3,12 +3,9 @@ import thunkMiddleware from 'redux-thunk';
 import reducers from './reducers';
 
 
-// Creates store with thunk middleware.
-// It's important to write in same order
-export default function configureStore(initialState) {
- return createStore(
-	 reducers,
-	 initialState,
-	 applyMiddleware(thunkMiddleware)
- );
-}
+export default (initialState) => {
+	const middlewares = [thunkMiddleware];
+	const createStoreWithMiddlewares = applyMiddleware(...middlewares)(createStore);
+
+	return createStoreWithMiddlewares(reducers, initialState);
+};
