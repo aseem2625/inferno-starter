@@ -7,7 +7,7 @@ import viewRoutes from './views';
 
 //redux
 import { Provider } from 'inferno-redux';
-import store from './reducers/createStore';
+import createStore from './reducers/createStore';
 
 import './index.sass';
 
@@ -16,6 +16,8 @@ if (module.hot) {
 }
 
 const history = createBrowserHistory();
+const initialState = {counter:{counter: 3}}; // We'll get this data from window.__data when passed from server in SSR
+const store = createStore(initialState); // Create store with initial state
 
 const App = () => (
 	<Provider store={store}>
