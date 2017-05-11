@@ -32,6 +32,7 @@ export default class Home extends Component {
 					<b>Note:</b> If you increment the Counter to, suppose, 6 and you move to /blog and come back then count will be 8 because this component will mount again
 				</div>
 				<button className="temp-btn" onClick={this.props.increment}>REDUX COUNTER BUTTON</button>
+				<button className="temp-btn" onClick={this.props.incrementExtra}>REDUX COUNTER JUMP BUTTON</button>
 				<span>Counter: {this.props.count}</span>
 				<Card>
 					<h1>Home</h1>
