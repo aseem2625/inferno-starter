@@ -18,10 +18,17 @@
 - [Lukeed Inferno](https://github.com/lukeed/inferno-starter): Starter inferno repo for PWA-SPA-Webpack2
 
 <br />
+
+released under [MIT LICENSE](https://github.com/aseem2625/inferno-starter/blob/master/LICENSE)
+
+<br />
 <br />
 
 
-**Please note:** [Lukeed](https://github.com/lukeed/inferno-starter) has currently used basic CSS techniques with webpack's extract plugin. That's pretty much cleaner approach. Currently, large number of practices are being followed in css from performance perspective, reducing file size, chunking, etc. I'm yet to research more ways concretely and find a suitable practice to implement. Feel free to suggest or send a PR.
+**Please note:** 
+- [Lukeed](https://github.com/lukeed/inferno-starter) has currently used basic CSS techniques with webpack's extract plugin. That's pretty much cleaner and simple approach. Currently, large number of practices are being followed in css from performance perspective, reducing file size, chunking, etc. I'm yet to research more ways concretely and find a suitable practice to implement for improving performance while not degrading developer experience. Feel free to suggest or send a PR.
+- Bootstrap or other css frameworks won't be added since I want to keep this repo as much minimalistic. Use traditional approach or [bootstrap-loader](https://www.npmjs.com/package/bootstrap-loader) in case you want to try.
+- I'll be creating small in-project css library for grids and all necessary things for style to keep overall size small by not including bootstrap, etc.
 
 ---
 <p align="center">:warning: Boilerplate & commands will evolve as my own development process does. :warning:</p>
@@ -53,6 +60,7 @@ npm start
 * Code splitting for lazy loading JS modules
 * Async data fetch (TBD)
 * Work on CSS side for performance. See if chunking is good. Ensure that this doesn't flicker very first load. (TBD)
+* Add just necessary css style in-project library
 * [Lighthouse](https://github.com/GoogleChrome/lighthouse) Initial repo from [Lukeed](https://github.com/lukeed/inferno-starter) was 100/100 Lighthouse certified. I'm yet to verify again after my modifications
 
 ### SSR (WIP)
@@ -64,7 +72,8 @@ npm start
 * convert .html to .ejs or .hbs for better control (TBD)
 * sanitze html (TBD)
 * Proxy the api requests to different server (TBD)
-* security checks (TBD)
+* Segregate reducers also in lazy loading (TBD) Reference: [Davezuko-react](https://github.com/davezuko/react-redux-starter-kit/blob/master/src/store/reducers.js)
+* security checks (TBD) Reference: [helmet](https://www.npmjs.com/package/helmet), [express(helmet)](https://expressjs.com/en/advanced/best-practice-security.html)
 
 ### Improvements (TBD)
 * Add redux-logger
@@ -119,6 +128,3 @@ The dashboard is meant to be interactive (scrollable). If you are having issues,
 
 > ***OS X Terminal.app users:*** Make sure that **View → Allow Mouse Reporting** is enabled, otherwise scrolling through logs and modules won't work. If your version of Terminal.app doesn't have this feature, you may want to check out an alternative such as [iTerm2](https://www.iterm2.com/index.html).
 
-## License
-
-MIT © [Luke Edwards](https://lukeed.com)
