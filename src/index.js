@@ -6,9 +6,8 @@ import { createBrowserHistory } from 'history';
 import viewRoutes from './views';
 
 //redux
-import { Provider } from 'inferno-redux'
-import { createStore } from 'redux'
-import reducers from './reducers'
+import { Provider } from 'inferno-redux';
+import store from './reducers/createStore';
 
 import './index.sass';
 
@@ -16,7 +15,6 @@ if (module.hot) {
 	require('inferno-devtools');
 }
 
-const store = createStore(reducers);
 const history = createBrowserHistory();
 
 const App = () => (
