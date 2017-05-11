@@ -1,18 +1,33 @@
 import Inferno from 'inferno';
+
+// router-routes
 import { Router } from 'inferno-router';
 import { createBrowserHistory } from 'history';
 import viewRoutes from './views';
-import './index.sass';
 
-const history = createBrowserHistory();
+//redux
+import { Provider } from 'inferno-redux';
+import createStore from './reducers/createStore';
+
+import './index.sass';
 
 if (module.hot) {
 	require('inferno-devtools');
 }
 
-Inferno.render((
-	<Router history={ history }>{ viewRoutes }</Router>
-), document.getElementById('root'));
+const history = createBrowserHistory();
+const initialState = {counter:{counter: 3}}; // We'll get this data from window.__data when passed from server in SSR
+const store = createStore(initialState); // Create store with initial state
+
+const App = () => (
+	<Provider store={store}>
+		<Router history={ history }>
+			{ viewRoutes }
+		</Router>
+	</Provider>
+);
+Inferno.render(App(), document.getElementById('root'));
+
 
 if (process.env.NODE_ENV === 'production') {
 	// cache all assets if browser supports serviceworker
