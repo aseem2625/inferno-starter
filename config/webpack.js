@@ -10,7 +10,7 @@ module.exports = env => {
 
 	return {
 		entry: {
-			app: './src/index.js',
+			app: './src/client.js',
 			vendor: ['inferno', 'inferno-router', 'history']
 		},
 		output: {

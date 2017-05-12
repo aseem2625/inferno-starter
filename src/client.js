@@ -3,7 +3,7 @@ import Inferno from 'inferno';
 // router-routes
 import { Router } from 'inferno-router';
 import { createBrowserHistory } from 'history';
-import viewRoutes from './views';
+import viewRoutes from './routes';
 
 //redux
 import { Provider } from 'inferno-redux';
