@@ -3,7 +3,8 @@ const ExtractText = require('extract-text-webpack-plugin');
 const setup = require('./setup');
 
 const dist = join(__dirname, '../dist');
-const exclude = /(node_modules|bower_components)/;
+// const exclude = /(node_modules|bower_components)/;
+const exclude = ['node_modules', 'bower_components'];
 
 module.exports = env => {
 	const isProd = env && env.production;
@@ -15,8 +16,8 @@ module.exports = env => {
 		},
 		output: {
 			path: dist,
-			chunkFilename : '[name].[chunkhash].js',
-			filename: `[name]${isProd ? '.[chunkhash]' : ''}.js`,
+			chunkFilename : isProd ? '[name].[chunkhash].js' : '[name].js',
+			filename: isProd ? '[name].[chunkhash].js' : '[name].js',
 			publicPath: '/'
 		},
 		module: {
