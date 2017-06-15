@@ -20,7 +20,22 @@ module.exports = isProd => {
 	const plugins = [
 		new Clean(['dist'], { root }),
 		new Copy([{context: 'src/static/', from: '**/*.*'}]),
-		new webpack.optimize.CommonsChunkPlugin({ name:'vendor' }),
+		new webpack.optimize.CommonsChunkPlugin({
+			name:'vendor',
+			minChunks: function (module) {
+				return module.context && module.context.indexOf('node_modules') !== -1;
+			}
+			// minChunks: module => /node_modules/.test(module.resource)
+		}),
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'manifest' //But since there are no more common modules between them we end up with just the runtime code included in the manifest file
+		}),
+		/*
+		 new webpack.optimize.CommonsChunkPlugin({
+		 names: ['vendor', 'manifest'],
+		 }),
+		 */
+
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development')
 		}),
