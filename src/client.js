@@ -2,7 +2,7 @@ import Inferno from 'inferno';
 
 // router-routes
 import { Router } from 'inferno-router';
-import { createBrowserHistory } from 'history';
+import createBrowserHistory from 'history/createBrowserHistory';
 import viewRoutes from './routes';
 
 //redux
