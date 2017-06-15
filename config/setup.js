@@ -7,6 +7,8 @@ const Clean = require('clean-webpack-plugin');
 const Copy = require('copy-webpack-plugin');
 const HTML = require('html-webpack-plugin');
 
+const BabiliPlugin = require('babili-webpack-plugin');
+
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const uglify = require('./uglify');
@@ -53,6 +55,9 @@ module.exports = isProd => {
 	if (isProd) {
 		plugins.push(
 			new webpack.LoaderOptionsPlugin({ minimize:true, debug:false }),
+			new BabiliPlugin({
+				mangle: { topLevel: true },
+			}),
 			new webpack.optimize.UglifyJsPlugin(uglify),
 			new ExtractText('styles.[chunkhash].css'),
 			new SWPrecache({
