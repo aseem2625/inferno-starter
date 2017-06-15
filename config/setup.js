@@ -7,6 +7,8 @@ const Clean = require('clean-webpack-plugin');
 const Copy = require('copy-webpack-plugin');
 const HTML = require('html-webpack-plugin');
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 const uglify = require('./uglify');
 const babel = require('./babel');
 
@@ -43,7 +45,8 @@ module.exports = isProd => {
 				dontCacheBustUrlsMatching: /./,
 				navigateFallback: 'index.html',
 				staticFileGlobsIgnorePatterns: [/\.map$/]
-			})
+			}),
+			new BundleAnalyzerPlugin()
 		);
 	} else {
 		// dev only
