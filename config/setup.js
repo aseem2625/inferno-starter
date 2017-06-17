@@ -41,7 +41,13 @@ module.exports = isProd => {
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development')
 		}),
-		new HTML({template: 'src/index.html'}),
+		new HTML({
+			template: 'src/index.html',
+			minify: {
+				collapseWhitespace: true,
+				conservativeCollapse: true
+			}
+		}),
 		new webpack.LoaderOptionsPlugin({
 			options: {
 				babel,
