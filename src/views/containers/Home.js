@@ -26,6 +26,8 @@ export default class Home extends Component {
 	}
 
 	render() {
+		const styles = require('../../styles/containers/home.sass');
+
 		return (
 			<div className="page page__home">
 				<div className="temp-note">
@@ -62,7 +64,7 @@ export default class Home extends Component {
 					<h2>Dev Dashboard</h2>
 					<p>With <a href="https://github.com/FormidableLabs/webpack-dashboard" target="_blank" rel="noopener">`webpack-dashboard`</a>, it's much easier to see what's happening inside your bundles. In addition to de-cluttering your `webpack-dev-server` log, you can quickly make sense of your bundles' `import`s and sizes.</p>
 
-					<img src="/img/dev-dash.jpg" alt="dummy image description" />
+					<img data-src="/img/dev-dash.jpg" alt="dummy image description" />
 
 					<p>The dashboard is meant to be interactive (scrollable). If you are having issues, please see the author's note:</p>
 					<p>

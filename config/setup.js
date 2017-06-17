@@ -65,7 +65,7 @@ module.exports = isProd => {
 				mangle: { topLevel: true },
 			}),
 			new webpack.optimize.UglifyJsPlugin(uglify),
-			new ExtractText('styles.[chunkhash].css'),
+			new ExtractText('[name].[chunkhash].css'),
 			new SWPrecache({
 				filename: 'service-worker.js',
 				dontCacheBustUrlsMatching: /./,

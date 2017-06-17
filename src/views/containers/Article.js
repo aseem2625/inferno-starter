@@ -2,7 +2,11 @@ import Inferno from 'inferno';
 import { Link } from 'inferno-router';
 import Card from '../components/Card';
 
+import '../../styles/containers/article.sass'; // Same as const styles = ... with current webpack configs
+
 export default function (props) {
+	// const styles = require('../../styles/containers/article.sass');
+
 	const title = props.params.title;
 	return (
 		<div className="page page__article">

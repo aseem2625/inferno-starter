@@ -9,7 +9,7 @@ import viewRoutes from './routes';
 import { Provider } from 'inferno-redux';
 import createStore from './reducers/createStore';
 
-import './index.sass';
+import './styles/index.sass';
 
 if (module.hot) {
 	require('inferno-devtools');
