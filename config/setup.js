@@ -61,6 +61,7 @@ module.exports = isProd => {
 	if (isProd) {
 		plugins.push(
 			new webpack.LoaderOptionsPlugin({ minimize:true, debug:false }),
+			new webpack.optimize.ModuleConcatenationPlugin(),
 			new BabiliPlugin({
 				mangle: { topLevel: true },
 			}),
