@@ -3,7 +3,7 @@
 > Want to learn infernojs or kickstart your next application!  🔥(SPA / SSR / PWA / Webpack, etc) ? <br /> Checkout the branches below:
 - `master` - aim to make it ideal SSR with webpack2 [merger of all other branches]
 - `ssr` - aim to have SSR converted from SPA. Will be removed once ssr is merged to master [WIP]
-- `spa` - aim to have SPA with merger of all possible feature branches [TBD, for now check master until `ssr` branch is completed]
+- `spa` - aim to have SPA with as much minimal footprint and best general standards and development practices (inferno, redux, router, webpack, frontend api middleware, logger middleware)
 - `redux` - adds inferno-redux with component in SPA. Additionally added redux-thunk to show middleware usage. [feature branch]
 - `lazyload` - adds code-splitting for lazy loading js components at route level in SPA. (plans to extend to css later) [feature branch]
 
@@ -26,7 +26,8 @@ released under [MIT LICENSE](https://github.com/aseem2625/inferno-starter/blob/m
 
 
 **Please note:** 
-- [Lukeed](https://github.com/lukeed/inferno-starter) has currently used basic CSS techniques with webpack's extract plugin. That's pretty much cleaner and simple approach. Currently, large number of practices are being followed in css from performance perspective, reducing file size, chunking, etc. I'm yet to research more ways concretely and find a suitable practice to implement for improving performance while not degrading developer experience. Feel free to suggest or send a PR.
+- [Lukeed](https://github.com/lukeed/inferno-starter) originally made setup to have a build with all css in single .css file.
+ Recently, I modified it to be CSS in JS way which goes really well with chunks. Layout specific css is put inside bundle css file and some in index.html
 - Bootstrap or other css frameworks won't be added since I want to keep this repo as much minimalistic. Use traditional approach or [bootstrap-loader](https://www.npmjs.com/package/bootstrap-loader) in case you want to try.
 - I'll be creating small in-project css library for grids and all necessary things for style to keep overall size small by not including bootstrap, etc.
 
@@ -77,12 +78,13 @@ npm start
 
 ### Improvements (TBD)
 * Add redux-logger
-* Separate api layer on frontend
-* Check support for preload, prefetch etc.
+* Separate api layer on frontend (probably using fetch as it's tending to become non-jquery standard and will be helpful in SSR as well)
+* Check support for preload, prefetch etc. (can be done for smaller website. It's done at html plugin level)
 * Change header based on route. SEO related support, like custom twitter/facebook meta-data
 * Add robots.txt
 * Support for fonts, etc
-* What's a PWA boilerplate without showing above/below-the-fold example.
+* Special care for caching. Since files served would be having unique chunk hash. It makes sense to put cache max-life to be a large no.
+* What's a PWA boilerplate without showing above/below-the-fold example (Use component specific chunking with es6 import way)
 
 ---
 
