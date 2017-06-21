@@ -15,12 +15,12 @@
     "watch": "webpack-dashboard -- webpack-dev-server --config config/webpack"
   },
   "dependencies": {
-    "history": "^4.6.2",
-    "inferno": "^3.5.2",
-    "inferno-component": "^3.5.2",
-    "inferno-redux": "^3.5.2",
-    "inferno-router": "^3.5.2",
-    "redux": "^3.6.0",
+    "history": "^4.6.3",
+    "inferno": "^3.6.0",
+    "inferno-component": "^3.6.0",
+    "inferno-redux": "^3.6.0",
+    "inferno-router": "^3.6.0",
+    "redux": "^3.7.0",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
@@ -37,16 +37,16 @@
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
     "html-webpack-plugin": "https://github.com/Re-Rabbit/html-webpack-plugin.git",
-    "inferno-devtools": "^3.5.2",
+    "inferno-devtools": "^3.6.0",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.6",
     "sass-loader": "^6.0.6",
-    "serve": "^5.2.2",
+    "serve": "^5.2.3",
     "style-loader": "^0.18.2",
     "sw-precache-webpack-plugin": "^0.11.3",
     "webpack": "^3.0.0",
     "webpack-bundle-analyzer": "^2.8.2",
     "webpack-dashboard": "^0.4.0",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.5.0"
   }
 }
