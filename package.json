@@ -3,11 +3,10 @@
   "name": "inferno-starter",
   "version": "0.3.0",
   "license": "MIT",
-  "repository": "lukeed/inferno-starter",
+  "repository": "aseem2625/inferno-starter",
   "author": {
-    "name": "Luke Edwards",
-    "email": "luke.edwards05@gmail.com",
-    "url": "https://lukeed.com"
+    "name": "Aseem Gupta",
+    "email": "aseemgupta2625@gmail.com"
   },
   "scripts": {
     "build": "webpack --env.production --config config/webpack",
