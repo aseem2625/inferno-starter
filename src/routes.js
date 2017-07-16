@@ -2,13 +2,12 @@ import Inferno from 'inferno'
 import { Route, IndexRoute } from 'inferno-router'
 
 import AppContainer from './views/containers/AppContainer';
-import Home from './views/containers/Home';
-
 
 export default (
 	<Route component={ AppContainer }>
-		<IndexRoute path="/" component={ Home } />
-
+		<IndexRoute path="/" getComponent={(props, cb) => {
+			require.ensure([], require => cb(null, require('./views/containers/Home').default), 'home');
+		}}/>
 
 		<Route path="/credit" getComponent={(props, cb) => {
 			require.ensure([], require => cb(null, require('./views/containers/Credit').default), 'credit');
