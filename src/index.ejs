@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Inferno Starter</title>
-    <meta name="mobile-web-app-capable" content="yes">
+		<link rel="icon" href="/static/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimal-ui">
 
     <meta name="mobile-web-app-capable" content="yes">
@@ -55,11 +55,19 @@
 				background-color:white;
 			}
 		</style>
+		<style type="text/css"><%- css %></style>
+
+		<!-- Inject route based meta tags using microservice -->
   </head>
   <body>
-    <div id="root">Loading</div>
+		<div id="root"><%- html %></div>
 
 		<%= htmlWebpackPlugin.files.webpackManifest %>
+		<script>
+			// WARNING: See the following for security issues around embedding JSON in HTML:
+			// http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations
+			window.__PRELOADED_STATE__ = JSON.stringify(<%- preloadedState %>);
+		</script>
   </body>
 
 	<!--Defer image download to improve performance. Image download ways can be improved depending upon visibility on screen-->

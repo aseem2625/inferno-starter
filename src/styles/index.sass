@@ -1,5 +1,9 @@
 /**
  * Main stylesheet
+ * Note:
+ * 1. Only styles to be bundled in app.css are to be mentioned here
+ * 2. Individual chunks have their styles embedded in JS
+ * 3. But routes which has no individual chunks are bundled in app.js, so their css also is bundled in app.css due to extract plugin
  */
 
 @import 'lib/vars'

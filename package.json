@@ -9,22 +9,29 @@
     "email": "aseemgupta2625@gmail.com"
   },
   "scripts": {
-    "build": "webpack --env.production --config config/webpack",
+    "build": "webpack --env.production --config config/webpack && cd dist && gzip *.js *.css -k",
     "start": "serve dist -s",
     "watch": "webpack-dashboard -- webpack-dev-server --config config/webpack"
   },
   "dependencies": {
+    "compression": "^1.7.0",
+    "ejs": "^2.5.7",
     "es6-promise": "^4.1.1",
+    "express": "^4.15.3",
     "history": "^4.6.3",
     "inferno": "^3.7.1",
     "inferno-component": "^3.7.1",
     "inferno-redux": "^3.7.1",
     "inferno-router": "^3.7.1",
+    "inferno-server": "^3.7.1",
     "isomorphic-fetch": "^2.2.1",
+    "path": "^0.12.7",
+    "qs": "^6.5.0",
     "redux": "^3.7.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^6.4.1",
     "babel-plugin-inferno": "^3.2.0",
@@ -35,13 +42,16 @@
     "clean-webpack-plugin": "^0.1.16",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.4",
+    "ejs-loader": "^0.3.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^2.30.1",
     "inferno-devtools": "^3.7.1",
     "inline-manifest-webpack-plugin": "^3.0.1",
+    "isomorphic-style-loader": "^3.0.0",
     "loglevel": "^1.4.1",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.6",
+    "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.6",
     "script-ext-html-webpack-plugin": "^1.8.5",
     "serve": "^6.0.5",
@@ -50,6 +60,7 @@
     "webpack": "^3.4.1",
     "webpack-bundle-analyzer": "^2.8.3",
     "webpack-dashboard": "^0.4.0",
-    "webpack-dev-server": "^2.6.1"
+    "webpack-dev-server": "^2.6.1",
+    "webpack-node-externals": "^1.6.0"
   }
 }

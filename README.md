@@ -74,11 +74,16 @@ npm start
 * async data fetching technique and feed for initial state (TBD)
 * caching pages for server load-optimization. There are many techniqes and controls, however only a simplr LRU approach to cache route level components will be used for now.(TBD)
 * Dynamically disable server side rendering based on server load (TBD, may not add this)
-* convert .html to .ejs or .hbs for better control (TBD)
+* convert .html to .ejs or .hbs for better control (DONE)
 * sanitze html (TBD)
 * Proxy the api requests to different server (TBD)
 * Segregate reducers also in lazy loading (TBD) Reference: [Davezuko-react](https://github.com/davezuko/react-redux-starter-kit/blob/master/src/store/reducers.js)
 * security checks (TBD) Reference: [helmet](https://www.npmjs.com/package/helmet), [express(helmet)](https://expressjs.com/en/advanced/best-practice-security.html)
+* performance (TBD) Reference: [performance](https://expressjs.com/en/advanced/best-practice-performance.html)
+* Compress html before sending (DONE)
+* Asynchronously render on server
+* Add proper style loaders
+* Serving pre-gzipped js and css through express. Can be handled in nginx for static files. 
 
 ### Improvements (TBD)
 - [] Add redux-logger

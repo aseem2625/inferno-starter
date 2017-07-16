@@ -6,6 +6,7 @@ const Dashboard = require('webpack-dashboard/plugin');
 const Clean = require('clean-webpack-plugin');
 const Copy = require('copy-webpack-plugin');
 const HTML = require('html-webpack-plugin');
+const ScriptExtHTML = require('script-ext-html-webpack-plugin');
 
 const BabiliPlugin = require('babili-webpack-plugin');
 
@@ -24,7 +25,8 @@ module.exports = isProd => {
 	// base plugins array
 	const plugins = [
 		new Clean(['dist'], { root }),
-		new Copy([{context: 'src/static/', from: '**/*.*'}]),
+		// new Copy([{context: 'src/static/', from: '**/*.*'}]),
+		new Copy([{from: 'src/static/', to: 'static/'}]),
 		new Copy([{from: 'src/manifest.json', to: 'manifest.json'}]),
 		new webpack.optimize.CommonsChunkPlugin({
 			name:'vendor',
@@ -43,10 +45,13 @@ module.exports = isProd => {
 		 */
 
 		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development')
+			'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development'),
+			'__SERVER__': false
 		}),
 		new HTML({
-			template: 'src/index.html',
+			template: '!!raw-loader!src/index.ejs', // raw-loader to avoid html-plugin to evaluate ejs variables which will throw error
+			// template: 'src/index.ejs',
+			filename: 'index.ejs',
 			inject: 'head',
 			minify: {
 				removeComments: true,
@@ -88,8 +93,8 @@ module.exports = isProd => {
 				dontCacheBustUrlsMatching: /./,
 				navigateFallback: 'index.html',
 				staticFileGlobsIgnorePatterns: [/\.map$/]
-			}),
-			new BundleAnalyzerPlugin()
+			})
+			// new BundleAnalyzerPlugin()
 		);
 	} else {
 		// dev only

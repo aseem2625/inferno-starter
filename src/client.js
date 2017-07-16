@@ -3,7 +3,7 @@ import Inferno from 'inferno';
 // router-routes
 import { Router } from 'inferno-router';
 import createBrowserHistory from 'history/createBrowserHistory';
-import viewRoutes from './routes';
+import viewRoutes from './client/routes';
 
 //redux
 import { Provider } from 'inferno-redux';
@@ -20,8 +20,23 @@ if (module.hot) {
 }
 
 const history = createBrowserHistory();
-const initialState = {counter:{counter: 3}}; // We'll get this data from window.__data when passed from server in SSR
-const store = createStore(initialState); // Create store with initial state
+
+let preloadedState = window.__PRELOADED_STATE__; // Grab the state from a global variable injected into the server-generated HTML
+delete window.__PRELOADED_STATE__; // Allow the passed state to be garbage-collected
+if (preloadedState) {
+	try {
+		preloadedState = JSON.parse(preloadedState);
+	}
+	catch(e) {
+		console.log('There is Fishy');
+		preloadedState = {};
+	}
+} else {
+	preloadedState = {};
+}
+
+console.log('PRELOADED STATE', preloadedState);
+const store = createStore(preloadedState); // Create store with initial state
 
 const App = () => (
 	<Provider store={store}>
@@ -49,4 +64,8 @@ if (process.env.NODE_ENV === 'production') {
 
 	// track pages on route change
 	window.ga && history.listen(obj => ga('send', 'pageview', obj.pathname));
+
+
+	const dest = document.getElementById('root');
+	console.dir(dest.firstChild.attributes);
 }

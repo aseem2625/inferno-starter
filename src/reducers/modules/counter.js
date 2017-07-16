@@ -6,13 +6,14 @@ const ASYNC_FETCH = 'ASYNC_FETCH';
 
 // Initial State
 const initialState = {
-	counter: 1
+	counter: 50
 };
 
 // Reducer
 export default function reducer(state = initialState, action = {}) {
 	switch (action.type) {
 		case  INCREMENT:
+			console.log('STATE COUNTER..', state.counter);
 			return {
 				...state,
 				counter: state.counter + 1
