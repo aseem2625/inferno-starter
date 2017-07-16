@@ -22,6 +22,7 @@ module.exports = isProd => {
 	const plugins = [
 		new Clean(['dist'], { root }),
 		new Copy([{context: 'src/static/', from: '**/*.*'}]),
+		new Copy([{from: 'src/manifest.json', to: 'manifest.json'}]),
 		new webpack.optimize.CommonsChunkPlugin({
 			name:'vendor',
 			minChunks: function (module) {
