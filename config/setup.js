@@ -45,8 +45,11 @@ module.exports = isProd => {
 		new HTML({
 			template: 'src/index.html',
 			minify: {
+				removeComments: true,
 				collapseWhitespace: true,
-				conservativeCollapse: true
+				conservativeCollapse: true,
+				minifyCSS: true,
+				minifyJS: true
 			}
 		}),
 		new webpack.LoaderOptionsPlugin({
