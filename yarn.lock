@@ -1858,7 +1858,7 @@ debug@2.6.7:
   dependencies:
     ms "2.0.0"
 
-debug@2.6.8, debug@^2.1.1, debug@^2.2.0, debug@^2.6.0, debug@^2.6.8:
+debug@2.6.8, debug@^2.1.1, debug@^2.2.0, debug@^2.6.0, debug@^2.6.6, debug@^2.6.8:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
   dependencies:
@@ -2770,7 +2770,7 @@ he@1.1.x:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
-history@^4.6.1, history@^4.6.3:
+history@^4.6.3:
   version "4.6.3"
   resolved "https://registry.yarnpkg.com/history/-/history-4.6.3.tgz#6d723a8712c581d6bef37e8c26f4aedc6eb86967"
   dependencies:
@@ -2942,75 +2942,75 @@ indexof@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/indexof/-/indexof-0.0.1.tgz#82dc336d232b9062179d05ab3293a66059fd435d"
 
-inferno-component@3.6.4, inferno-component@^3.6.4:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/inferno-component/-/inferno-component-3.6.4.tgz#8645383bac1965559a37d493e142295ac11731e7"
+inferno-component@3.7.0, inferno-component@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/inferno-component/-/inferno-component-3.7.0.tgz#8d03b8bf59742e905406917bb5002731e0a7db27"
   dependencies:
-    inferno "3.6.4"
-    inferno-shared "3.6.4"
-    inferno-vnode-flags "3.6.4"
+    inferno "3.7.0"
+    inferno-shared "3.7.0"
+    inferno-vnode-flags "3.7.0"
 
-inferno-create-element@3.6.4:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/inferno-create-element/-/inferno-create-element-3.6.4.tgz#8f53d5c7e5a74fbac0c3dac3f3eb3826fb862e96"
+inferno-create-element@3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/inferno-create-element/-/inferno-create-element-3.7.0.tgz#fd96e860820cf7730aca73f1c3e083eb48f2c392"
   dependencies:
-    inferno "3.6.4"
-    inferno-component "3.6.4"
-    inferno-shared "3.6.4"
-    inferno-vnode-flags "3.6.4"
+    inferno "3.7.0"
+    inferno-component "3.7.0"
+    inferno-shared "3.7.0"
+    inferno-vnode-flags "3.7.0"
 
-inferno-devtools@^3.6.4:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/inferno-devtools/-/inferno-devtools-3.6.4.tgz#21507d5a0ed9f60f9b63735bf4399d7750574c00"
+inferno-devtools@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/inferno-devtools/-/inferno-devtools-3.7.0.tgz#aadb1f0563656a588acc9492b88e3bb4b9209063"
   dependencies:
-    inferno "3.6.4"
-    inferno-component "3.6.4"
-    inferno-shared "3.6.4"
-    inferno-vnode-flags "3.6.4"
+    inferno "3.7.0"
+    inferno-component "3.7.0"
+    inferno-shared "3.7.0"
+    inferno-vnode-flags "3.7.0"
 
-inferno-redux@^3.6.4:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/inferno-redux/-/inferno-redux-3.6.4.tgz#905c3327a5255e0bfb75180271b567f6b08301e8"
+inferno-redux@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/inferno-redux/-/inferno-redux-3.7.0.tgz#07c61e52bfcd66359b3aaf40167a0485dc0dc523"
   dependencies:
     hoist-non-inferno-statics "^1.1.3"
-    inferno "3.6.4"
-    inferno-component "3.6.4"
-    inferno-create-element "3.6.4"
-    inferno-shared "3.6.4"
+    inferno "3.7.0"
+    inferno-component "3.7.0"
+    inferno-create-element "3.7.0"
+    inferno-shared "3.7.0"
     lodash.isplainobject "^4.0.6"
     redux "^2.0.0 || ^3.0.0"
 
-inferno-router@^3.6.4:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/inferno-router/-/inferno-router-3.6.4.tgz#e7fa2b70552bc747232b363d27f9255c634f853c"
+inferno-router@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/inferno-router/-/inferno-router-3.7.0.tgz#febcb313bfa037f2081987ed5a7df081cf343b1e"
   dependencies:
-    history "^4.6.1"
-    inferno "3.6.4"
-    inferno-component "3.6.4"
-    inferno-create-element "3.6.4"
-    inferno-shared "3.6.4"
-    inferno-vnode-flags "3.6.4"
+    history "^4.6.3"
+    inferno "3.7.0"
+    inferno-component "3.7.0"
+    inferno-create-element "3.7.0"
+    inferno-shared "3.7.0"
+    inferno-vnode-flags "3.7.0"
     path-to-regexp "^1.7.0"
     path-to-regexp-es6 "0.0.2"
 
-inferno-shared@3.6.4:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/inferno-shared/-/inferno-shared-3.6.4.tgz#0a13e89ed45c527172d59747b31329487d5f3d7f"
+inferno-shared@3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/inferno-shared/-/inferno-shared-3.7.0.tgz#a5a5b9f2c96ba0f7898fde856b4ce5581ba350b3"
 
 inferno-vnode-flags@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/inferno-vnode-flags/-/inferno-vnode-flags-3.0.0.tgz#f396390f3dafae3b76eea04d04eed6cf2004473b"
 
-inferno-vnode-flags@3.6.4:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/inferno-vnode-flags/-/inferno-vnode-flags-3.6.4.tgz#1237612232e22fc2de0346bcb3f802edbd347cae"
+inferno-vnode-flags@3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/inferno-vnode-flags/-/inferno-vnode-flags-3.7.0.tgz#422ff0a0a98f7923c14fe7d0c4d22785449abe66"
 
-inferno@3.6.4, inferno@^3.6.4:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/inferno/-/inferno-3.6.4.tgz#d36dee9c895530dca0e4a03648b2530531a7aa32"
+inferno@3.7.0, inferno@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/inferno/-/inferno-3.7.0.tgz#0bea890e21a5daca425cb958ba185cf4d06e99b9"
   dependencies:
-    inferno-shared "3.6.4"
-    inferno-vnode-flags "3.6.4"
+    inferno-shared "3.7.0"
+    inferno-vnode-flags "3.7.0"
 
 inflight@^1.0.4:
   version "1.0.6"
@@ -3493,6 +3493,10 @@ lodash.uniq@^4.5.0:
 lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@~4.17.4:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+
+loglevel@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.4.1.tgz#95b383f91a3c2756fd4ab093667e4309161f2bcd"
 
 longest@^1.0.1:
   version "1.0.1"
@@ -5088,16 +5092,16 @@ socket.io@^1.4.8:
     socket.io-client "1.7.4"
     socket.io-parser "2.3.1"
 
-sockjs-client@1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/sockjs-client/-/sockjs-client-1.1.2.tgz#f0212a8550e4c9468c8cceaeefd2e3493c033ad5"
+sockjs-client@1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/sockjs-client/-/sockjs-client-1.1.4.tgz#5babe386b775e4cf14e7520911452654016c8b12"
   dependencies:
-    debug "^2.2.0"
+    debug "^2.6.6"
     eventsource "0.1.6"
     faye-websocket "~0.11.0"
     inherits "^2.0.1"
     json3 "^3.3.2"
-    url-parse "^1.1.1"
+    url-parse "^1.1.8"
 
 sockjs@0.3.18:
   version "0.3.18"
@@ -5594,7 +5598,7 @@ url-parse@1.0.x:
     querystringify "0.0.x"
     requires-port "1.0.x"
 
-url-parse@^1.1.1:
+url-parse@^1.1.8:
   version "1.1.9"
   resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.1.9.tgz#c67f1d775d51f0a18911dd7b3ffad27bb9e5bd19"
   dependencies:
@@ -5729,9 +5733,9 @@ webpack-dev-middleware@^1.11.0:
     path-is-absolute "^1.0.0"
     range-parser "^1.0.3"
 
-webpack-dev-server@^2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.5.1.tgz#a02e726a87bb603db5d71abb7d6d2649bf10c769"
+webpack-dev-server@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.6.0.tgz#8a861acac73097afed031f35826447a3013a4eb3"
   dependencies:
     ansi-html "0.0.7"
     bonjour "^3.5.0"
@@ -5748,7 +5752,7 @@ webpack-dev-server@^2.5.1:
     selfsigned "^1.9.1"
     serve-index "^1.7.2"
     sockjs "0.3.18"
-    sockjs-client "1.1.2"
+    sockjs-client "1.1.4"
     spdy "^3.4.1"
     strip-ansi "^3.0.0"
     supports-color "^3.1.1"
