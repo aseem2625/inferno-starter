@@ -35,6 +35,9 @@ export default class Home extends Component {
 				</div>
 				<button className="temp-btn" onClick={this.props.increment}>REDUX COUNTER BUTTON</button>
 				<button className="temp-btn" onClick={this.props.incrementExtra}>REDUX COUNTER JUMP BUTTON</button>
+				<button className="temp-btn" onClick={()=>this.props.getAsyncData().then(res=>console.log('*HOME...THEN...', res)).catch(e=>console.log('*HOME...CATCH...', e))}>
+					REDUX ASYNC FETCH BUTTON
+				</button>
 				<span>Counter: {this.props.count}</span>
 				<Card>
 					<h1>Home</h1>
