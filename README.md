@@ -62,7 +62,11 @@ npm start
 * Async data fetch (TBD)
 * Work on CSS side for performance. See if chunking is good. Ensure that this doesn't flicker very first load. (TBD)
 * Add just necessary css style in-project library
+* Isomorphic-fetch support (Increased in size: app.js-> ~3KB parse ~1KBg zip. vendor.js-> ~15KB parse ~5KB gzip)
 * [Lighthouse](https://github.com/GoogleChrome/lighthouse) Initial repo from [Lukeed](https://github.com/lukeed/inferno-starter) was 100/100 Lighthouse certified. I'm yet to verify again after my modifications
+
+**Note:**
+1. **isomorphic-fetch** aids in SSR. If you are not doing SSR but just SPA, I would recommend to use [fetch polyfill](https://github.com/github/fetch) instead of isomorphic-fetch. Although, optimizations like tree-shaking are in place, but you may experiment to reduce bundle size.
 
 ### SSR (WIP)
 * This is above SPA extended to SSR (all possible features from above)
@@ -77,14 +81,14 @@ npm start
 * security checks (TBD) Reference: [helmet](https://www.npmjs.com/package/helmet), [express(helmet)](https://expressjs.com/en/advanced/best-practice-security.html)
 
 ### Improvements (TBD)
-* Add redux-logger
-* Separate api layer on frontend (probably using fetch as it's tending to become non-jquery standard and will be helpful in SSR as well)
-* Check support for preload, prefetch etc. (can be done for smaller website. It's done at html plugin level)
-* Change header based on route. SEO related support, like custom twitter/facebook meta-data
-* Add robots.txt
-* Support for fonts, etc
-* Special care for caching. Since files served would be having unique chunk hash. It makes sense to put cache max-life to be a large no.
-* What's a PWA boilerplate without showing above/below-the-fold example (Use component specific chunking with es6 import way)
+- [] Add redux-logger
+- [x] Separate api layer on frontend (probably using fetch as it's tending to become non-jquery standard and will be helpful in SSR as well)
+- [] Check support for preload, prefetch etc. (can be done for smaller website. It's done at html plugin level)
+- [] Change header based on route. SEO related support, like custom twitter/facebook meta-data
+- [] Add robots.txt
+- [] Support for fonts, etc
+- [] Special care for caching. Since files served would be having unique chunk hash. It makes sense to put cache max-life to be a large no.
+- [] What's a PWA boilerplate without showing above/below-the-fold example (Use component specific chunking with es6 import way)
 
 ---
 
