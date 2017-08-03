@@ -14,13 +14,14 @@
     "watch": "webpack-dashboard -- webpack-dev-server --config config/webpack"
   },
   "dependencies": {
+    "es6-promise": "^4.1.1",
     "history": "^4.6.3",
     "inferno": "^3.7.0",
     "inferno-component": "^3.7.0",
     "inferno-redux": "^3.7.0",
     "inferno-router": "^3.7.0",
-    "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "isomorphic-fetch": "^2.2.1",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

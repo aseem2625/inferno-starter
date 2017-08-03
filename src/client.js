@@ -11,6 +11,10 @@ import createStore from './reducers/createStore';
 
 import './styles/index.sass';
 
+// isomorphic-fetch
+import 'isomorphic-fetch';
+import 'es6-promise/auto';
+
 if (module.hot) {
 	require('inferno-devtools');
 }
