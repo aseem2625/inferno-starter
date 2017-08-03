@@ -1,11 +1,14 @@
 import { createStore, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
+import clientMiddleware from './middlewares/clientMiddleware';
 import reducers from './reducers';
 
 
+/* Create redux store with middleware */
 export default (initialState) => {
-	const middlewares = [thunkMiddleware];
+	const middlewares = [clientMiddleware];
 	const createStoreWithMiddlewares = applyMiddleware(...middlewares)(createStore);
 
-	return createStoreWithMiddlewares(reducers, initialState);
+	// Hot reloading for reducers
+
+    return createStoreWithMiddlewares(reducers, initialState);
 };
