@@ -9,6 +9,7 @@ import { Provider } from 'inferno-redux';
 import config from './server/config';
 import viewRoutes from './server/routes';
 
+import * as utils from './server/utils';
 import qs from 'qs';
 
 const app = Express();
@@ -40,6 +41,7 @@ const checkForHTML = req => {
 var compress = require('compression');
 app.use(compress({filter: checkForHTML}));
 
+// Code should be moved to nginx level to serve static files
 const encodeResToGzip = contentType => (req, res, next) => {
 	req.url = req.url + '.gz';
 	res.set('Content-Encoding', 'gzip');
@@ -99,11 +101,13 @@ const IsStaticFile = url => {
 
 //TODO: https://github.com/ReactTraining/react-router/blob/v2.0.0-rc5/docs/guides/advanced/ServerRendering.md
 function handleRender (req, res) {
+	let fileMapping = utils.getConfig('./file_mapping.json');
 	if(IsStaticFile(req.url)) {
 		// js/css/gz shouldn't be reaching here as they're static files and should already have been served
 		res.status(404).send('Not found');
 	} else {
 		const renderProps = match(viewRoutes, req.originalUrl);
+
 		if (renderProps.redirect) {
 			return res.redirect(renderProps.redirect)
 		}
@@ -132,22 +136,25 @@ function handleRender (req, res) {
 
 		const preloadedState = store.getState();
 		console.log('wow PRELOADAED STATE...', preloadedState);
+		const requestedRouteFile = fileMapping[renderProps.matched.props.children.props.filename];
+		console.log('RENDER FILE NAME..', requestedRouteFile);
 
 		// TODO: Don't renderToString the app but pass custom html, like loader div, in case of high server load.
 		// TODO: However, data can still be sent bcoz it won't increase load on server
 		// res.send(renderFullPage(html, preloadedState)) // Send the rendered page back to the client
 
 		//TODO: use dangerouslySetInnerHtml in .ejs for performance. Sanitze html before passing data
-		res.render('./index.ejs', renderFullPage(html, preloadedState, css));
+		res.render('./index.ejs', renderFullPage(html, preloadedState, requestedRouteFile, css));
 	}
 }
 
 
-function renderFullPage (html, preloadedState, css) {
+function renderFullPage (html, preloadedState, requestedRouteFile, css) {
 	preloadedState = JSON.stringify(preloadedState).replace(/</g, '\\u003c');
 	return {
 		html: html,
 		preloadedState: preloadedState,
+		requestedRouteFile: requestedRouteFile,
 		css: css.join('')
 	};
 }

@@ -11,12 +11,12 @@ import Error404 from '../views/containers/errors/404';
 
 export default (
 	<Route component={ AppContainer }>
-		<IndexRoute path="/" component={ Home } />
+		<IndexRoute path="/" component={ Home } filename="home.js"/>
 
-		<Route path="/credit" component={ Credit } />
-		<Route path="/blog" component={ Blog } />
-		<Route path="/blog/:title" component={ Article } />
-		<Route path="*" component={ Error404 } />
+		<Route path="/credit" component={ Credit } filename="credit.js"/>
+		<Route path="/blog" component={ Blog } filename="blog.js"/>
+		<Route path="/blog/:title" component={ Article } filename="article.js"/>
+		<Route path="*" component={ Error404 } filename="404.js"/>
 
 	</Route>
 );

@@ -6,7 +6,6 @@ const Dashboard = require('webpack-dashboard/plugin');
 const Clean = require('clean-webpack-plugin');
 const Copy = require('copy-webpack-plugin');
 const HTML = require('html-webpack-plugin');
-const ScriptExtHTML = require('script-ext-html-webpack-plugin');
 
 const BabiliPlugin = require('babili-webpack-plugin');
 
@@ -14,6 +13,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 const ScriptExtHTML = require('script-ext-html-webpack-plugin');
 const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 const uglify = require('./uglify');
 const babel = require('./babel');
@@ -76,7 +76,13 @@ module.exports = isProd => {
 					require('autoprefixer')({ browsers:['last 3 version'] })
 				]
 			}
-		})
+		}),
+		new ManifestPlugin({
+				fileName: 'file_mapping.json',
+				seed: {
+					name: 'File_Map'
+				}
+			})
 	];
 
 	if (isProd) {
