@@ -12,6 +12,7 @@ const BabiliPlugin = require('babili-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const ScriptExtHTML = require('script-ext-html-webpack-plugin');
+const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin');
 
 const uglify = require('./uglify');
 const babel = require('./babel');
@@ -56,8 +57,13 @@ module.exports = isProd => {
 			}
 		}),
 		new ScriptExtHTML({
-			defer: ['manifest', 'vendor', 'app'] // Useful in SSR because these are no longer Critical resources
+			defer: ['vendor', 'app'] // Useful in SSR because these are no longer Critical resources
 		}),
+		// To insert manifest.js directly into .ejs template. Saves 1 http request
+		new InlineManifestWebpackPlugin({
+			name: 'webpackManifest'
+		}),
+
 		new webpack.LoaderOptionsPlugin({
 			options: {
 				babel,
@@ -96,3 +102,4 @@ module.exports = isProd => {
 
 	return plugins;
 };
+
