@@ -48,9 +48,12 @@ module.exports = isProd => {
 			'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development'),
 			'__SERVER__': false
 		}),
+		new webpack.ProvidePlugin({
+			_: 'lodash'
+		}),
 		new HTML({
-			template: '!!raw-loader!src/index.ejs', // raw-loader to avoid html-plugin to evaluate ejs variables which will throw error
-			// template: 'src/index.ejs',
+			// template: '!!raw-loader!src/index.ejs', // raw-loader to avoid html-plugin to evaluate ejs variables which will throw error
+			template: 'src/index.ejs',
 			filename: 'index.ejs',
 			inject: 'head',
 			minify: {
@@ -59,6 +62,11 @@ module.exports = isProd => {
 				conservativeCollapse: true,
 				minifyCSS: true,
 				minifyJS: true
+			},
+			ejsVarInject: {
+				html: '<%- html %>',
+				preloadedState: '<%- preloadedState %>',
+				requestedRouteFile: '<%- requestedRouteFile %>'
 			}
 		}),
 		new ScriptExtHTML({
