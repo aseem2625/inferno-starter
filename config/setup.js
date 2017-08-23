@@ -11,6 +11,8 @@ const BabiliPlugin = require('babili-webpack-plugin');
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+const ScriptExtHTML = require('script-ext-html-webpack-plugin');
+
 const uglify = require('./uglify');
 const babel = require('./babel');
 
@@ -44,6 +46,7 @@ module.exports = isProd => {
 		}),
 		new HTML({
 			template: 'src/index.html',
+			inject: 'head',
 			minify: {
 				removeComments: true,
 				collapseWhitespace: true,
@@ -51,6 +54,9 @@ module.exports = isProd => {
 				minifyCSS: true,
 				minifyJS: true
 			}
+		}),
+		new ScriptExtHTML({
+			defer: ['manifest', 'vendor', 'app'] // Useful in SSR because these are no longer Critical resources
 		}),
 		new webpack.LoaderOptionsPlugin({
 			options: {
